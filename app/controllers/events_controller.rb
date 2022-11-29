@@ -1,35 +1,35 @@
-class ParksController < ApplicationController
+class EventsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
-        render json: Park.all, status: :ok
+        render json: Event.all, status: :ok
     end
 
     def show
-        render json: Park.find(params[:id]), status: :ok
+        render json: Event.find(params[:id]), status: :ok
     end
 
     def created
-        park = Park.create!(park_params)
-        render json: park, status: :created
+        event = Event.create!(event_params)
+        render json: event, status: :created
     end
 
     def update
-        park = Park.find(params[:id])
-        park.update(user_params)
-        render json: park, status: :accepted
+        event = Event.find(params[:id])
+        event.update(user_params)
+        render json: event, status: :accepted
     end
 
     def destroy
-        park = Park.find(params[:id])
-        park.destroy
+        event = Event.find(params[:id])
+        event.destroy
         head :no_content
     end
 
 
     private
 
-    def park_params
+    def event_params
         params.permit(:name, :address, :hours, :image, :amenities)
     end
 
@@ -37,3 +37,5 @@ class ParksController < ApplicationController
         render json: {errors: invalid.record.errors}, status: :unprocessable_entity
     end
 end
+
+

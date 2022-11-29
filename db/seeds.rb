@@ -19,3 +19,13 @@ Park.create(name:"Bayland Park", address:"6400 Bissonnet St, Houston, TX 77074",
 Park.create(name:"Sunnyside Park", address:"3502 Bellfort Ave, Houston, TX 77051", hours:"10AM–5PM", image:"", amenities: ["baseball", "tennis", "soccer", "basketball"])
 Park.create(name:"Stude Park", address:"Stude Park, Houston, TX 77007", hours:"24hrs", image:"", amenities: ["baseball"])
 Park.create(name:"Woodland Park", address:"212 Parkview St, Houston, TX 77009", hours:"24hrs", image:"", amenities: ["tennis","basketball"])
+
+
+u1 = User.create(name:"abel", email:"abel@gmail.com")
+u2 = User.create(name:"beth", email:"beth@gmail.com")
+u3 = User.create(name:"carlos", email:"carlos@gmail.com")
+
+Event.create(name:"Pickleball game", info:"12pm", park:Park.find_by(name:"Fleming Park"), user:u1.id)
+Event.create(name:"Doubles Tennis Match", info:"need two for adoubles tennis match", park:Park.find_by(name:"Alief Community Park"), user:u2.id)
+Event.create(name:"Pick up Bball game", info:"3 on 3 at 4pm", park:Park.find_by(name:"Spotts Park"), user:u3.id)
+
