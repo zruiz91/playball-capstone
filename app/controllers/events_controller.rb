@@ -30,7 +30,8 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.permit(:name, :address, :hours, :image, :amenities)
+        # unsure if the park_id and user_d should just be park and user
+        params.permit(:name, :info, :park_id, :user_id)
     end
 
     def render_unprocessable_entity

@@ -1,5 +1,4 @@
 class ParksController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
         render json: Park.all, status: :ok
@@ -33,7 +32,4 @@ class ParksController < ApplicationController
         params.permit(:name, :address, :hours, :image, :amenities)
     end
 
-    def render_unprocessable_entity
-        render json: {errors: invalid.record.errors}, status: :unprocessable_entity
-    end
 end

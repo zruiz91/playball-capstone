@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def show
         user = User.find(parameters[:id])
@@ -26,10 +25,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name, :email)
-    end
-
-    def render_unprocessable_entity(invalid)
-        render json: {errors: invalid.record.errors}, status: :unprocessable_entity
+        params.permit(:name, :email, :password)
     end
 end
