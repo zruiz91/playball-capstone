@@ -1,13 +1,24 @@
+import {Link} from 'react-router-dom'
+
+
 const Header = () => {
     return (
         <header>
             <h1>
                 PlayBall
             </h1>
-            <div>
-                <button>login</button>
-                <button>signup</button>
-            </div>
+            <h1>
+            {/* <button>🏀</button>
+            <button>⚽️</button>
+            <button>🎾</button>
+            <button>⚾️</button> */}
+            <button><Link to='/parks'>Parks</Link></button>
+            <button><Link to='/events'>Events</Link></button>
+            </h1>
+            <h1>
+            <button><Link to='/login'>Log In</Link></button>
+            <button><Link to='/signup'>Sign In</Link></button>
+            </h1>
         </header>
         // <nav class="navbar navbar-light bg-light">
         //     <div class="container-fluid">

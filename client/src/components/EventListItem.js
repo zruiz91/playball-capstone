@@ -3,12 +3,10 @@ const EventListItem = ( { event } ) => {
     return (
         <li>
             <section>
-                <h4> { event.name } </h4>
-                <p>
-                    { event.info }
-                </p>
-                <h5>{event.park}</h5>
-                <h5>{event.user}</h5>
+                <h4>Event: {event.name } </h4>
+                <h5>Location: {event.park.name}</h5>
+                <h5>Oranizer: {event.user.name}</h5>
+                <p>Details: {event.info }</p>
             </section>
             <footer>
                 <button>Favorite</button>

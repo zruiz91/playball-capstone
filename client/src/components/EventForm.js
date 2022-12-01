@@ -1,57 +1,47 @@
 import { useState } from "react";
+import { useHistory } from 'react-router-dom'
 
-const initialState = {
-    name: "",
-    info: "",
-    park: "",
-    user: "",
-}
 
 const EventForm = ({ onAddEvent }) => {
-    const [formData, setFormData] = useState(initialState);
-
-    const { name, info, park, user } = formData;
-    // equivalent to:
-    // const name = formData.name
-    // const info = formData.info
-    // const park = formData.park
-    // const user = formData.user
+    const [errors, setErrors] = useState([])
+    const [formData, setFormData] = useState({
+        name: '',
+        info: '',
+        park: '',
+        user: '',
+    })
+    const history = useHistory()
 
     const handleOnChange = (e) => {
-        const { name, value } = e.target;
-        // const name = e.target.name;
-        // const value = e.target.value;
-        console.log("name: " + name);
-        console.log("value: " + value);
-
-        setFormData(formData => {
-            return {
-                ...formData,
-                [name]: value // equivalent to: [e.target.name]: e.target.value
-            };
-        })
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("formData: " + JSON.stringify(formData));
-        onAddEvent(formData);
-        // setFormData(initialState);
-        fetch("http://localhost:3000/events`",{
-            method: "POST",
-            headers: { 'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        //POST '/productions'
+        fetch('/events', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...formData})
         })
-        .then(res => res.json())
-        .then(newEvent => {
-            onAddEvent(newEvent);
-            setFormData(initialState);
-        })
+            .then(res => {
+                if (res.ok) {
+                    res.json().then(data => {
+                        onAddEvent(data)
+                        history.push(`/events/${data.id}`)
+                    })
+                } else {
+                    res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} : ${e[1]}`)))
+                }
+            })
     }
+
 
     return (
         <section>
+            {errors ? errors.map(e => <div>{e}</div>) : null}
             <form className="form" autoComplete="off" onSubmit={handleSubmit}>
                 <h3>Add New Event</h3>
 
@@ -60,7 +50,7 @@ const EventForm = ({ onAddEvent }) => {
                     type="text"
                     id="name"
                     name="name"
-                    value={name}
+                    value={formData.name}
                     onChange={handleOnChange}
                 />
 
@@ -68,7 +58,7 @@ const EventForm = ({ onAddEvent }) => {
                 <textarea
                     id="info"
                     name="info"
-                    value={info}
+                    value={formData.info}
                     onChange={handleOnChange}
                 />
 
@@ -76,21 +66,21 @@ const EventForm = ({ onAddEvent }) => {
                 <input
                     name="park"
                     id="park"
-                    value={park}
+                    value={formData.park}
                     onChange={handleOnChange}
                 />
 
-                <label htmlFor="user">Event Homepage</label>
+                <label htmlFor="user">User</label>
                 <input
-                    type="text"
                     id="user"
                     name="user"
-                    value={user}
+                    value={formData.user}
                     onChange={handleOnChange}
                 />
 
                 <button type="submit">Add Event</button>
             </form>
+            {errors ? errors.map(e => <h2 style={{ color: 'red' }}>{e.toUpperCase()}</h2>) : null}
         </section>
     );
 };

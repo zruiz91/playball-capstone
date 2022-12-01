@@ -13,7 +13,7 @@ const ParksContainer = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:4000/parks")
+        fetch("/parks")
             .then((res) => res.json())
             .then((parksData) => setParks(parksData));
 
