@@ -13,12 +13,29 @@ const EventsContainer = () => {
 
     }, [])
 
+    const onDeleteEvent = (eventToDelete) => {
+        const updatedEvents = events.filter((event) => event.id !== eventToDelete.id);
+        setEvents(updatedEvents);
+    }
+
+    const onUpdateEvent = (updatedEvent) => {
+        const updatedEvents = events.map((event) =>
+            event.id === updatedEvent.id ? updatedEvent : event
+        );
+        setEvents(updatedEvents);
+    }
 
     const onAddEvent = (newEvent) => setEvents(events => [...events, newEvent])
+
     return (
         <div>
-        <EventForm onAddEvent={onAddEvent} />
-        <EventList events={events} />
+            <EventForm onAddEvent={onAddEvent}
+
+            />
+            <EventList events={events}
+                onDeleteEvent={onDeleteEvent}
+                onUpdateEvent={onUpdateEvent}
+            />
         </div>
     )
 }

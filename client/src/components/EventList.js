@@ -4,15 +4,22 @@ import EventListItem from './EventListItem'
 //temporary front-end DB
 
 
-const EventList = ({ events }) => {
+const EventList = ({ events, onUpdateEvent, onDeleteEvent }) => {
     // const [searchQuery, setSearchQuery] = useState("")
 
     // const searchResults = events.filter(event => {
     //     return event.name.toLowerCase().includes(searchQuery.toLowerCase())
     // })
 
-    const eventListItems = events.map(event => {
-        return <EventListItem key={event.id} event={event} />
+    const eventListItems = events.map((event) => {
+        return (
+            <EventListItem
+            key={event.id}
+            event={event}
+            onUpdateEvent={onUpdateEvent}
+            onDeleteEvent={onDeleteEvent}
+        />
+        )
     })
 
     // const handleSearch = (e) => {
@@ -21,7 +28,7 @@ const EventList = ({ events }) => {
     return (
         <section>
             <div>
-            <h1>All Events</h1>
+                <h1>All Events</h1>
             </div>
             {/* <input
             type="text"

@@ -10,7 +10,8 @@ class EventsController < ApplicationController
     end
 
     def create
-        event = Event.create!(event_params)
+        # byebug
+        event = Event.create(event_params)
         render json: event, status: :created
     end
 

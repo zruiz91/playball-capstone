@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+
+    def index
+        render json: User.all, status: :ok
+    end
+
     def show
         user = User.find(parameters[:id])
         render json: user, status: :ok

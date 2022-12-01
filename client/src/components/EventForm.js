@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom'
 
 
 const EventForm = ({ onAddEvent }) => {
+    const [parks, setParks] = useState([])
+    const [users, setUsers] = useState([])
+    let [user, setUser] = useState("⬇️ Select a user ⬇️")
+    let [park, setPark] = useState("⬇️ Select a park ⬇️")
     const [errors, setErrors] = useState([])
     const [formData, setFormData] = useState({
         name: '',
         info: '',
-        park: '',
-        user: '',
+        park_id: '',
+        user_id: '',
     })
     const history = useHistory()
 
@@ -17,6 +21,32 @@ const EventForm = ({ onAddEvent }) => {
         setFormData({ ...formData, [name]: value })
     }
 
+    //fetch all parks n set parks as state
+    useEffect(() => {
+        fetch("/parks")
+            .then((res) => res.json())
+            .then((parksData) => setParks(parksData));
+
+    }, [])
+
+    const handleUserChange = (e) => {
+        setUser(e.target.value)
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
+    }
+
+    useEffect(() => {
+        fetch("/users")
+            .then((res) => res.json())
+            .then((usersData) => setUsers(usersData));
+
+    }, [])
+
+    const handleParkChange = (e) => {
+        setPark(e.target.value)
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
+    }
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -24,17 +54,13 @@ const EventForm = ({ onAddEvent }) => {
         fetch('/events', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...formData})
+            body: JSON.stringify({ ...formData })
         })
-            .then(res => {
-                if (res.ok) {
-                    res.json().then(data => {
-                        onAddEvent(data)
-                        history.push(`/events/${data.id}`)
-                    })
-                } else {
-                    res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} : ${e[1]}`)))
-                }
+            .then(console.log(formData))
+            .then(res => res.json())
+            .then(data => {
+                onAddEvent(data)
+                history.push(`/events/${data.id}`)
             })
     }
 
@@ -62,21 +88,25 @@ const EventForm = ({ onAddEvent }) => {
                     onChange={handleOnChange}
                 />
 
-                <label htmlFor="park">park</label>
-                <input
-                    name="park"
-                    id="park"
-                    value={formData.park}
-                    onChange={handleOnChange}
-                />
+                <label htmlFor="park">Parks</label>
+                <select name="park_id"
+                    id="park_id"
+                    value={formData.park_id}
+                    onChange={handleParkChange}>
+                    {/*map over the parks and return option for each with id */}
+                    <option value="⬇️ Select a park⬇️"> -- Select a park -- </option>
+                    {parks.map((park) => <option value={park.id}>{park.name}</option>)}
+                </select>
 
-                <label htmlFor="user">User</label>
-                <input
-                    id="user"
-                    name="user"
-                    value={formData.user}
-                    onChange={handleOnChange}
-                />
+                <label htmlFor="user_id">Users</label>
+                <select name="user_id"
+                    id="user_id"
+                    value={formData.user_id}
+                    onChange={handleUserChange}>
+                    {/*map over the parks and return option for each with id */}
+                    <option value="⬇️ Select a user⬇️"> -- Select a user -- </option>
+                    {users.map((user) => <option value={user.id}>{user.name}</option>)}
+                </select>
 
                 <button type="submit">Add Event</button>
             </form>
