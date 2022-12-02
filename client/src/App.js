@@ -1,17 +1,21 @@
 // client/src/components/App.js
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
+import Home from './components/Home';
 import Header from './components/Header';
 import LogInForm from './components/LogInForm';
 import EventsContainer from './components/EventsContainer';
 import ParksContainer from "./components/ParksContainer";
-import ParkDetailsPage from "./components/ParkDetailsPage";
+
 import SignUpForm from './components/SignUpForm';
 import NotFound from './components/NotFound'
 
+
 function App() {
+
+
 
   return (
     <BrowserRouter>
@@ -19,6 +23,10 @@ function App() {
         <Header />
 
         <Switch>
+
+          <Route exact path="/">
+            <Home />
+          </Route>
 
           <Route path="/signup">
             <SignUpForm />
@@ -36,13 +44,6 @@ function App() {
             <EventsContainer />
           </Route>
 
-          <Route path='/parks/:id'>
-            <ParkDetailsPage />
-          </Route>
-
-          <Route>
-            <NotFound />
-          </Route>
 
         </Switch>
       </div>

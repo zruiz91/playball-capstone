@@ -8,7 +8,7 @@ class ParksController < ApplicationController
         render json: Park.find(params[:id]), status: :ok
     end
 
-    def created
+    def create
         park = Park.create!(park_params)
         render json: park, status: :created
     end

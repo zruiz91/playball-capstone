@@ -1,22 +1,19 @@
+import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
 
+import EditEventForm from './EditEventForm'
+import EventDetailsPage from "./EventDetailsPage";
 import EventList from "./EventList";
 import EventForm from "./EventForm";
 
 const EventsContainer = () => {
     const [events, setEvents] = useState([])
 
-    useEffect(() => {
-        fetch("/events")
-            .then((res) => res.json())
-            .then(setEvents);
 
-    }, [])
 
-    const onDeleteEvent = (eventToDelete) => {
-        const updatedEvents = events.filter((event) => event.id !== eventToDelete.id);
-        setEvents(updatedEvents);
-    }
+
+    const onAddEvent = (newEvent) => setEvents(events => [...events, newEvent])
+
 
     const onUpdateEvent = (updatedEvent) => {
         const updatedEvents = events.map((event) =>
@@ -25,17 +22,45 @@ const EventsContainer = () => {
         setEvents(updatedEvents);
     }
 
-    const onAddEvent = (newEvent) => setEvents(events => [...events, newEvent])
+
+    const onDeleteEvent = (eventToDelete) => {
+        const updatedEvents = events.filter((event) => event.id !== eventToDelete.id);
+        setEvents(updatedEvents);
+    }
+
+
+    useEffect(() => {
+        fetch("/events")
+            .then((res) => res.json())
+            .then((eventsData) => setEvents(eventsData));
+
+    }, [])
 
     return (
         <div>
-            <EventForm onAddEvent={onAddEvent}
+            <EventForm path="events/new"
+                onAddEvent={onAddEvent}
+            />
+            <Switch>
+                <Route>
+                    <EventList exact path="/events"
+                        events={events}
+                        onDeleteEvent={onDeleteEvent}
+                        onUpdateEvent={onUpdateEvent}
+                    />
+                </Route>
 
-            />
-            <EventList events={events}
-                onDeleteEvent={onDeleteEvent}
-                onUpdateEvent={onUpdateEvent}
-            />
+
+
+                <Route path="/events/:id">
+                    <EventDetailsPage />
+                </Route>
+
+                <Route path="/events/:id/edit">
+                    <EditEventForm />
+
+                </Route>
+            </Switch>
         </div>
     )
 }

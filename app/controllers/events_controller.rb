@@ -6,7 +6,8 @@ class EventsController < ApplicationController
     end
 
     def show
-        render json: Event.find(params[:id]), status: :ok
+        event = Event.find(params[:id])
+        render json: event, status: :ok
     end
 
     def create
@@ -31,8 +32,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        # unsure if the park_id and user_d should just be park and user
-        params.permit(:name, :info, :park_id, :user_id)
+        params.permit( :name, :info, :park_id, :user_id)
     end
 
     def render_unprocessable_entity
