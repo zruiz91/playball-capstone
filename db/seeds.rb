@@ -1,3 +1,4 @@
+puts "Seeding 🏀⚽️🎾⚾️"
 
 Park.create(name:"Fleming Park", address:"1901 Sunset,  Houston, TX 77005", hours:"6AM–11PM", image:"", amenities: ["tennis", "basketball", "pickleball"])
 Park.create(name:"Alief Community Park", address:"11903 Bellaire Blvd, Houston, TX 77072", hours:"6AM–11PM", image:"", amenities: ["tennis", "basketball"])
@@ -14,11 +15,15 @@ Park.create(name:"Stude Park", address:"Stude Park, Houston, TX 77007", hours:"2
 Park.create(name:"Woodland Park", address:"212 Parkview St, Houston, TX 77009", hours:"24hrs", image:"", amenities: ["tennis","basketball"])
 
 
-User.create(name:"abel", email:"abel@gmail.com",password:"123")
-User.create(name:"beth", email:"beth@gmail.com",password:"123")
-User.create(name:"carlos", email:"carlos@gmail.com", password:"123")
+# User.create(name:"abel", email:"abel@gmail.com",password:"123")
+# User.create(name:"beth", email:"beth@gmail.com",password:"123")
+# User.create(name:"carlos", email:"carlos@gmail.com", password:"123")
+# User.create(name:"david", email:"david@gmail.com",password:"123")
+# User.create(name:"eve", email:"eve@gmail.com",password:"123")
 
-Event.create(name:"Pickleball game", info:"12pm", park:Park.find_by(name:"Fleming Park"), user:User.find_by(id: 1))
-Event.create(name:"Doubles Tennis Match", info:"need two for adoubles tennis match", park:Park.find_by(name:"Alief Community Park"), user:User.find_by(id: 2))
-Event.create(name:"Pick up Bball game", info:"3 on 3 at 4pm", park:Park.find_by(name:"Spotts Park"), user:User.find_by(id: 3))
 
+# Event.create(name:"Pickleball game", info:"12pm", park:Park.find_by(name:"Fleming Park"), user:User.find_by(id: 1))
+# Event.create(name:"Doubles Tennis Match", info:"need two for adoubles tennis match", park:Park.find_by(name:"Alief Community Park"), user:User.find_by(id: 2))
+# Event.create(name:"Pick up Bball game", info:"3 on 3 at 4pm", park:Park.find_by(name:"Spotts Park"), user:User.find_by(id: 3))
+
+puts "😎"

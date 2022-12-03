@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams } from "react-router-dom";
 
 import EventListItem from './EventListItem'
 //temporary front-end DB

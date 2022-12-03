@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
         render json: Event.all, status: :ok
@@ -35,9 +34,6 @@ class EventsController < ApplicationController
         params.permit( :name, :info, :park_id, :user_id)
     end
 
-    def render_unprocessable_entity
-        render json: {errors: invalid.record.errors}, status: :unprocessable_entity
-    end
 end
 
 

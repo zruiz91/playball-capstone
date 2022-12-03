@@ -2,6 +2,17 @@ import { Link } from 'react-router-dom'
 
 
 const Header = () => {
+
+    const handleLogOut = () => {
+        fetch("/logout",{
+            method: "DELETE"
+        })
+        .then(res => {
+            if(res.ok){
+                console.log("delete")
+            }
+        })
+    }
     return (
         <header>
 
@@ -18,7 +29,8 @@ const Header = () => {
             </h1>
             <h1>
                 <button><Link to='/login'>Log In</Link></button>
-                <button><Link to='/signup'>Sign In</Link></button>
+                <button><Link to='/users/new'>Sign Up</Link></button>
+                <button onClick={handleLogOut}>Log Out</button>
             </h1>
         </header>
         // <nav class="navbar navbar-light bg-light">
