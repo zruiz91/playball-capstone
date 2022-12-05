@@ -79,44 +79,75 @@ const EventForm = ({ onAddEvent }) => {
             <form className="form" autoComplete="off" onSubmit={handleSubmit}>
                 <h3>Add New Event</h3>
 
-                <label htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleOnChange}
-                />
+                <div class="row">
+                    <div class="col">
+                        <label htmlFor="name" class="form-label">Name</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleOnChange}
+                        />
+                    </div>
+                    <div class="col">
+                        <label htmlFor="info" class="form-label">info</label>
+                        <textarea
+                            class="form-control"
+                            type="text"
+                            id="info"
+                            name="info"
+                            value={formData.info}
+                            onChange={handleOnChange}
+                        />
+                    </div>
+                </div>
 
-                <label htmlFor="info">info</label>
-                <textarea
-                    id="info"
-                    name="info"
-                    value={formData.info}
-                    onChange={handleOnChange}
-                />
+                {/* <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Event Name" value={formData.name} onChange={handleOnChange} />
 
-                <label htmlFor="park">Parks</label>
-                <select name="park_id"
-                    id="park_id"
-                    value={formData.park_id}
-                    onChange={handleParkChange}>
-                    {/*map over the parks and return option for each with id */}
-                    <option value="⬇️ Select a park⬇️"> -- Select a park -- </option>
-                    {parks.map((park) => <option value={park.id}>{park.name}</option>)}
-                </select>
+                    <label for="info" class="form-label">Info</label>
+                    <input type="text" class="form-control" id="name" placeholder="Event Info" value={formData.info} onChange={handleOnChange} />
+                </div> */}
 
-                <label htmlFor="user_id">Users</label>
-                <select name="user_id"
-                    id="user_id"
-                    value={formData.user_id}
-                    onChange={handleUserChange}>
-                    {/*map over the parks and return option for each with id */}
-                    <option value="⬇️ Select a user⬇️"> -- Select a user -- </option>
-                    {users.map((user) => <option value={user.id}>{user.name}</option>)}
-                </select>
+                <div class="row">
+                    <div class="col">
+                        <label htmlFor="park" class="form-label">Parks</label>
+                        <select
+                            class="form-select form-select-sm"
+                            name="park_id"
+                            id="park_id"
+                            value={formData.park_id}
+                            onChange={handleParkChange}>
+                            {/*map over the parks and return option for each with id */}
+                            <option selected > -- Select a park -- </option>
+                            {parks.map((park) => <option value={park.id}>{park.name}</option>)}
+                        </select>
+                    </div>
 
-                <button type="submit">Add Event</button>
+                    <div class="col">
+                        <label htmlFor="user_id" class="form-label">Users</label>
+                        <select
+                            class="form-select form-select-sm"
+                            name="user_id"
+                            id="user_id"
+                            value={formData.user_id}
+                            onChange={handleUserChange}>
+                            {/*map over the parks and return option for each with id */}
+                            <option value="⬇️ Select a user⬇️"> -- Select a user -- </option>
+                            {users.map((user) => <option value={user.id}>{user.name}</option>)}
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <button type="submit">Add Event</button>
+                    </div>
+                </div>
             </form>
             {errors ? errors.map(e => <h2 style={{ color: 'red' }}>{e.toUpperCase()}</h2>) : null}
         </section>

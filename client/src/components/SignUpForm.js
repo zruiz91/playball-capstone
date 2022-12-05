@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-const SignUpForm = () => {
+const SignUpForm = ({updateUser}) => {
+    //setting state for controlled formData
     const [formData, setFormData] = useState({
         name: '',
         // email: '',
@@ -11,8 +12,9 @@ const SignUpForm = () => {
     const [errors, setErrors] = useState([])
     const history = useHistory()
 
-    const { name, email, password } = formData
+    const { name, password } = formData
 
+    //funstion that takes the input of the formData, creates a user variable and calls a POST fetch with the variableand the set the user
     function onSubmit(e) {
         e.preventDefault()
         const user = {
@@ -29,7 +31,8 @@ const SignUpForm = () => {
             .then(res => {
                 if (res.ok) {
                     res.json().then(user => {
-                        history.push("/login")
+                        updateUser(user)
+                        history.push(`/users/${user.id}`)
                     })
                 } else {
                     res.json().then(json => setErrors(Object.entries(json.errors)))
@@ -44,34 +47,6 @@ const SignUpForm = () => {
     }
     return (
         <>
-            {/* <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-                onSubmit={onSubmit}
-            >
-                <TextField
-                    name='name'
-                    label="Name"
-                    value={name}
-                    onChange={handleChange}
-                />
-                <TextField
-                    name='email'
-                    label="Email"
-                    value={email}
-                    onChange={handleChange}
-                />
-                <TextField
-                    name='password'
-                    label="Password"
-                    value={password}
-                    onChange={handleChange}
-                />
-            </Box> */}
             <form onSubmit={onSubmit}>
                 <label>
                     Username

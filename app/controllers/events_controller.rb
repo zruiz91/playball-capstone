@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
     def update
         event = Event.find(params[:id])
-        event.update!(user_params)
+        event.update!(event_params)
         render json: event, status: :accepted
     end
 
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.permit( :name, :info, :park_id, :user_id)
+        params.permit(:id, :name, :info, :park_id, :user_id, :rsvp)
     end
 
 end

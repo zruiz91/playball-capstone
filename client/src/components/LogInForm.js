@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-const LogInForm = ({updateUser}) => {
+const LogInForm = ({ updateUser }) => {
+    //setting state for controlled formData
     const [formData, setFormData] = useState({
         name: '',
         password: ''
@@ -12,6 +13,7 @@ const LogInForm = ({updateUser}) => {
 
     const { name, password } = formData
 
+    //function that is triggered by submit event. Function calls a POST fetch sets user and then redirects to user account page
     function onSubmit(e) {
         e.preventDefault()
         const user = {
@@ -36,7 +38,7 @@ const LogInForm = ({updateUser}) => {
             })
 
     }
-
+    //function that handles the change of state of formData
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
@@ -45,7 +47,7 @@ const LogInForm = ({updateUser}) => {
         <>
 
             <form onSubmit={onSubmit}>
-                <label>
+                {/* <label>
                     Username
                 </label>
                 <input type='text' name='name' value={name} onChange={handleChange} />
@@ -53,9 +55,16 @@ const LogInForm = ({updateUser}) => {
                 <label>
                     Password
                 </label>
-                <input type='password' name='password' value={password} onChange={handleChange} />
+                <input type='password' name='password' value={password} onChange={handleChange} /> */}
 
-
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="userName" value={name} onChange={handleChange}/>
+                        <label for="name">UserName</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" placeholder="Password"  value={password} onChange={handleChange}/>
+                        <label for="floatingPassword">Password</label>
+                </div>
                 <input type='submit' value='Log in!' />
             </form>
             {errors ? <div>{errors}</div> : null}

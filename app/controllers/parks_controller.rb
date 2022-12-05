@@ -15,7 +15,7 @@ class ParksController < ApplicationController
 
     def update
         park = Park.find(params[:id])
-        park.update(user_params)
+        park.update(park_params)
         render json: park, status: :accepted
     end
 
@@ -29,7 +29,7 @@ class ParksController < ApplicationController
     private
 
     def park_params
-        params.permit(:name, :address, :hours, :image, :amenities)
+        params.permit(:id, :name, :address, :hours, :image, :amenities)
     end
 
 end

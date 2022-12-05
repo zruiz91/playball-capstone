@@ -27,15 +27,17 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearc
         return setSearchQuery(e.target.value)
     }
     return (
-        <section>
-            <div>
+        <section >
+            <div class="mb-4 mt-4">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    onChange={handleSearch}
+                />
+            </div>
+            <div class="mb-4">
                 <h1>All Events</h1>
             </div>
-            <input
-                type="text"
-                placeholder="Search..."
-                onChange={handleSearch}
-            />
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 {eventListItems}
             </div>

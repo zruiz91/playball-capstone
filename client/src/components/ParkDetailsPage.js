@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const ParkDetailsPage = () => {
     const [park, setPark] = useState({})
-    const [errors, setErrors] = useState();
+    const [errors, setErrors] = useState(false);
 
     const [loading, setLoading] = useState(true)
 
@@ -13,7 +13,7 @@ const ParkDetailsPage = () => {
 
 
     useEffect(() => {
-        fetch("/parks/parks.id")
+        fetch(`/parks/${params.id}`)
             .then(res => {
                 if (res.ok) {
                     res.json().then(data => {
@@ -26,12 +26,16 @@ const ParkDetailsPage = () => {
                 }
             })
     }, [])
-
+    const { id, name, address, amenities } = park
     return (
         <li>
             <section>
-                <h4> {park.name}</h4>
-
+                <h4> {id}</h4>
+                <h4> {name}</h4>
+                <h4> {address}</h4>
+                <ul>
+                    {amenities.map(amenity => <li>{amenity}</li>)}
+                </ul>
             </section>
             <footer>
                 <button>Favorite</button>

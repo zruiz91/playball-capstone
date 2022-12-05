@@ -7,12 +7,11 @@ const EventDetailsPage = () => {
     const [errors, setErrors] = useState(false);
 
     const [loading, setLoading] = useState(true)
-    
-    const id = useParams()
+    const params = useParams()
     const history = useHistory()
 
     useEffect(() => {
-        fetch(`/events/${id}`)
+        fetch(`/events/${params.id}`)
             .then(res => {
                 if (res.ok) {
                     res.json().then(data => {
@@ -43,7 +42,7 @@ const EventDetailsPage = () => {
                 <p>Details: {info}</p>
             </section>
             <footer>
-            <button><Link to={`/events/${id}/edit`}>Edit Event</Link></button>
+            <button><Link to={`/events/:id/edit`}>Edit Event</Link></button>
             </footer>
         </li>
     )
