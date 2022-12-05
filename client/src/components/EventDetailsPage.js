@@ -2,17 +2,17 @@ import { Link, useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 
-const EventDetailsPage = (onDeleteEvent) => {
+const EventDetailsPage = () => {
     const [event, setEvent] = useState({})
-    const [errors, setErrors] = useState();
+    const [errors, setErrors] = useState(false);
 
     const [loading, setLoading] = useState(true)
-
-    const params = useParams()
+    
+    const id = useParams()
     const history = useHistory()
 
     useEffect(() => {
-        fetch(`/events/${event.id}`)
+        fetch(`/events/${id}`)
             .then(res => {
                 if (res.ok) {
                     res.json().then(data => {
@@ -26,16 +26,24 @@ const EventDetailsPage = (onDeleteEvent) => {
             })
     }, [])
 
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    if (errors) {
+        return <div>Error: {errors}</div>
+    }
+    const [name, park, user, info] = event
     return (
         <li>
             <section>
-                <h4> {event.name} </h4>
-                <h5>Location: {event.park.name}</h5>
-                <h5>Oranizer: {event.user.name}</h5>
-                <p>Details: {event.info}</p>
+                <h4> {name} </h4>
+                <h5>Location: {park.name}</h5>
+                <h5>Oranizer: {user.name}</h5>
+                <p>Details: {info}</p>
             </section>
             <footer>
-                <button>Favorite</button>
+            <button><Link to={`/events/${id}/edit`}>Edit Event</Link></button>
             </footer>
         </li>
     )

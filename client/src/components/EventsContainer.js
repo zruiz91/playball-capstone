@@ -39,7 +39,7 @@ const EventsContainer = () => {
 
     return (
         <div>
-            <EventForm path="events/new"
+            <EventForm path="/events/new"
                 onAddEvent={onAddEvent}
             />
             <Switch>
@@ -56,12 +56,11 @@ const EventsContainer = () => {
 
 
                 <Route path="/events/:id">
-                    <EventDetailsPage />
+                    <EventDetailsPage  onDeleteEvent={onDeleteEvent}/>
                 </Route>
 
                 <Route path="/events/:id/edit">
-                    <EditEventForm />
-
+                    <EditEventForm onUpdateEvent={onUpdateEvent}/>
                 </Route>
             </Switch>
         </div>

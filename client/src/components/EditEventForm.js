@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 
 function EditEventForm({ updateEvent }) {
@@ -9,8 +9,9 @@ function EditEventForm({ updateEvent }) {
         park_id: '',
         user_id: '',
     })
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState()
     const { id } = useParams()
+    const history = useHistory()
 
     let [user, setUser] = useState("⬇️ Select a user ⬇️")
     let [park, setPark] = useState("⬇️ Select a park ⬇️")
@@ -59,21 +60,31 @@ function EditEventForm({ updateEvent }) {
 
     function onSubmit(e) {
         e.preventDefault()
-        //PATCH to `/events/${id}`
         fetch(`/events/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({ ...formData })
         })
+
             .then(res => {
                 if (res.ok) {
-                    res.json().then(updateEvent)
+                    console.log(res)
+                    res.json().then(data => {
+                        updateEvent(data)
+                        history.push(`/events/${id}`)
+                    })
+                } else {
+                    res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} : ${e[1]}`)))
                 }
             })
+        // .then(res => {
+        //     if (res.ok) {
+        //         res.json().then(updateEvent)
+        //     }
+        // })
     }
     return (
         <div className='App'>
-            {errors ? errors.map(e => <div>{e}</div>) : null}
             <form className="form" autoComplete="off" onSubmit={onSubmit}>
                 <label>Title </label>
                 <input type='text' name='title' value={formData.title} onChange={handleOnChange} />

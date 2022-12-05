@@ -15,11 +15,11 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearc
     const eventListItems = searchResults.map((event) => {
         return (
             <EventListItem
-            key={event.id}
-            event={event}
-            onUpdateEvent={onUpdateEvent}
-            onDeleteEvent={onDeleteEvent}
-        />
+                key={event.id}
+                event={event}
+                onUpdateEvent={onUpdateEvent}
+                onDeleteEvent={onDeleteEvent}
+            />
         )
     })
 
@@ -32,12 +32,14 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearc
                 <h1>All Events</h1>
             </div>
             <input
-            type="text"
-            placeholder="Search..."
-            onChange={handleSearch}
+                type="text"
+                placeholder="Search..."
+                onChange={handleSearch}
             />
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                {eventListItems}
+            </div>
 
-            <ul>{eventListItems}</ul>
         </section>
     )
 }

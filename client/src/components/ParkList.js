@@ -29,12 +29,12 @@ const ParkList = ({ parks, onSelectedAmenityChange, searchQuery, setSearchQuery 
                 <button onClick={() => onSelectedAmenityChange("baseball") }>⚾️</button> */}
             </div>
             <input
-            type="text"
-            placeholder="Search..."
-            onChange={handleSearch}
+                type="text"
+                placeholder="Search..."
+                onChange={handleSearch}
             />
 
-            <ul>{parkListItems}</ul>
+            <div class="row row-cols-1 row-cols-md-2 g-4">{parkListItems}</div>
         </section>
     )
 }

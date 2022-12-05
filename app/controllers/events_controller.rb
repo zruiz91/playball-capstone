@@ -11,13 +11,13 @@ class EventsController < ApplicationController
 
     def create
         # byebug
-        event = Event.create(event_params)
+        event = Event.create!(event_params)
         render json: event, status: :created
     end
 
     def update
         event = Event.find(params[:id])
-        event.update(user_params)
+        event.update!(user_params)
         render json: event, status: :accepted
     end
 

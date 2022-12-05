@@ -1,4 +1,4 @@
-// import Card from "react-bootstrap/Card";
+import Card from "react-bootstrap/Card";
 
 import { Link } from 'react-router-dom'
 
@@ -8,25 +8,22 @@ const ParkListItem = ({ park }) => {
     //     return <ParkListItem key={park.id} park={park} />
     // })
     const amenityListItems = park.amenities.map((amenity) => {
-        return <li>{amenity}</li>
+        return <li class="list-group-item">{amenity}</li>
     })
 
     return (
-        <li>
-            <section>
-            <Link to={`/parks/${park.id}`}><h4> { park.name } </h4></Link>
-                <p>
-                    { park.address }
-                </p>
-                <h5>Amenities</h5>
-                <ul>
-                    {amenityListItems}
-                </ul>
-            </section>
-            <footer>
-                <button>Favorite</button>
-            </footer>
-        </li>
+        <div class="col">
+            <div class="card text-center">
+                <section class="card-body">
+                    <Link to={`/parks/${park.id}`}><h5 class="card-title"> {park.name} </h5></Link>
+                    <h6 class="card-subtitle mb-2 text-muted">Location: {park.address}</h6>
+                    <h5 class="card-subtitle mb-2 text-muted">Amenities</h5>
+                    <ul class="list-group list-group-flush">
+                        {amenityListItems}
+                    </ul>
+                </section>
+            </div>
+        </div>
         // <Card sx={{ minWidth: 275 }}>
         //     <CardContent>
         //         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>

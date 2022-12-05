@@ -56,11 +56,19 @@ const EventForm = ({ onAddEvent }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...formData })
         })
-            .then(console.log(formData))
-            .then(res => res.json())
-            .then(data => {
-                onAddEvent(data)
-                history.push(`/events/${data.id}`)
+            .then(res => {
+                if (res.ok) {
+                    res.json().then(data => {
+                        onAddEvent(data)
+                        history.push(`/events/${data.id}`)
+                    })
+                } else {
+                    res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} : ${e[1]}`)))
+                }
+                // }res.json())
+                // .then(data => {
+                //     onAddEvent(data)
+                //     history.push(`/events/${data.id}`)
             })
     }
 

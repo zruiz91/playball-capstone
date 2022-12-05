@@ -31,7 +31,7 @@ const LogInForm = ({updateUser}) => {
                         history.push(`/users/${user.id}`)
                     })
                 } else {
-                    res.json().then(data => setErrors(data.errors))
+                    res.json().then(json => setErrors(json.errors))
                 }
             })
 
@@ -43,28 +43,6 @@ const LogInForm = ({updateUser}) => {
     }
     return (
         <>
-            {/* <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-                onSubmit={onSubmit}
-            >
-                <TextField
-                    name='name'
-                    label="Name"
-                    value={name}
-                    onChange={handleChange}
-                />
-                <TextField
-                    name='password'
-                    label="Password"
-                    value={password}
-                    onChange={handleChange}
-                />
-            </Box> */}
 
             <form onSubmit={onSubmit}>
                 <label>
