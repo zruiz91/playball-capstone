@@ -13,8 +13,7 @@ const ParkDetailsPage = () => {
 
 
     useEffect(() => {
-        //GET to '/productions/:id'
-        fetch(`/parks/${params.id}`)
+        fetch("/parks/parks.id")
             .then(res => {
                 if (res.ok) {
                     res.json().then(data => {
@@ -31,7 +30,7 @@ const ParkDetailsPage = () => {
     return (
         <li>
             <section>
-                <h4> {park.name} </h4>
+                <h4> {park.name}</h4>
 
             </section>
             <footer>

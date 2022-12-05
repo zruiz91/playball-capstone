@@ -5,14 +5,14 @@ import EventListItem from './EventListItem'
 //temporary front-end DB
 
 
-const EventList = ({ events, onUpdateEvent, onDeleteEvent }) => {
-    // const [searchQuery, setSearchQuery] = useState("")
+const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearchQuery }) => {
 
-    // const searchResults = events.filter(event => {
-    //     return event.name.toLowerCase().includes(searchQuery.toLowerCase())
-    // })
 
-    const eventListItems = events.map((event) => {
+    const searchResults = events.filter(event => {
+        return event.name.toLowerCase().includes(searchQuery.toLowerCase())
+    })
+
+    const eventListItems = searchResults.map((event) => {
         return (
             <EventListItem
             key={event.id}
@@ -23,19 +23,19 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent }) => {
         )
     })
 
-    // const handleSearch = (e) => {
-    //     return setSearchQuery(e.target.value)
-    // }
+    const handleSearch = (e) => {
+        return setSearchQuery(e.target.value)
+    }
     return (
         <section>
             <div>
                 <h1>All Events</h1>
             </div>
-            {/* <input
+            <input
             type="text"
             placeholder="Search..."
             onChange={handleSearch}
-            /> */}
+            />
 
             <ul>{eventListItems}</ul>
         </section>

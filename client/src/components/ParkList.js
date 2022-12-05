@@ -20,13 +20,13 @@ const ParkList = ({ parks, onSelectedAmenityChange, searchQuery, setSearchQuery 
     }
     return (
         <section>
-            <div class>
-                <h1>Parks</h1>
-                <button onClick={() => onSelectedAmenityChange("") }>⚾️🎾⚽️🏀</button>
+            <div>
+                <h1>All Parks</h1>
+                {/* <button onClick={() => onSelectedAmenityChange("") }>⚾️🎾⚽️🏀</button>
                 <button onClick={() => onSelectedAmenityChange("basketball") }>🏀</button>
                 <button onClick={() => onSelectedAmenityChange("soccer") }>⚽️</button>
                 <button onClick={() => onSelectedAmenityChange("tennis") }>🎾</button>
-                <button onClick={() => onSelectedAmenityChange("baseball") }>⚾️</button>
+                <button onClick={() => onSelectedAmenityChange("baseball") }>⚾️</button> */}
             </div>
             <input
             type="text"

@@ -33,8 +33,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-        {!currentUser ? <LogInForm errors={"please login"} updateUser={updateUser} /> :
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        {!currentUser ?
+        <Switch>
+          <Route path="/login" >
+              <LogInForm updateUser={updateUser}/>
+            </Route>
+
+            <Route path="/users/new">
+              <SignUpForm updateUser={updateUser}/>
+            </Route>
+        </Switch>:
           <Switch>
 
             <Route exact path="/">
@@ -42,15 +51,15 @@ function App() {
             </Route>
 
             <Route path="/users/new">
-              <SignUpForm />
+              <SignUpForm updateUser={updateUser}/>
             </Route>
 
             <Route path='/users/:id'>
               <UserPage />
             </Route>
 
-            <Route path="/login">
-              <LogInForm />
+            <Route path="/login" >
+              <LogInForm updateUser={updateUser}/>
             </Route>
 
             <Route path="/parks">

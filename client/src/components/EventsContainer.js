@@ -8,6 +8,7 @@ import EventForm from "./EventForm";
 
 const EventsContainer = () => {
     const [events, setEvents] = useState([])
+    const [searchQuery, setSearchQuery] = useState("")
 
 
 
@@ -47,6 +48,8 @@ const EventsContainer = () => {
                         events={events}
                         onDeleteEvent={onDeleteEvent}
                         onUpdateEvent={onUpdateEvent}
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
                     />
                 </Route>
 

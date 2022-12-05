@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
+
 const LogInForm = ({updateUser}) => {
     const [formData, setFormData] = useState({
         name: '',
@@ -42,6 +43,29 @@ const LogInForm = ({updateUser}) => {
     }
     return (
         <>
+            {/* <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                onSubmit={onSubmit}
+            >
+                <TextField
+                    name='name'
+                    label="Name"
+                    value={name}
+                    onChange={handleChange}
+                />
+                <TextField
+                    name='password'
+                    label="Password"
+                    value={password}
+                    onChange={handleChange}
+                />
+            </Box> */}
+
             <form onSubmit={onSubmit}>
                 <label>
                     Username
