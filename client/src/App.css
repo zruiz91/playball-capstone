@@ -49,3 +49,11 @@ header {
 ul {
   list-style: none;
 }
+
+#backgroundImage {
+  z-index: -1;
+  height: 100%;
+  border: 1px dashed #996;
+  background-color: #ffc;
+  margin: 0px 50px 0px 50px;
+}

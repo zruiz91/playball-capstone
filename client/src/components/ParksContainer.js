@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route } from "react-router-dom";
-
+import Container from "react-bootstrap/Container";
 
 import ParkList from "./ParkList";
 import ParkDetailsPage from "./ParkDetailsPage";
@@ -23,7 +23,7 @@ const ParksContainer = () => {
 
     return (
 
-
+        <Container>
         <Switch>
             <Route>
                 <ParkList
@@ -41,6 +41,7 @@ const ParksContainer = () => {
                 <ParkDetailsPage />
             </Route>
         </Switch>
+        </Container>
     )
 }
 

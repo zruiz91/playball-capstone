@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom'
-
+import Form from "react-bootstrap/Form";
 
 const EventForm = ({ onAddEvent }) => {
     const [parks, setParks] = useState([])
@@ -16,6 +16,7 @@ const EventForm = ({ onAddEvent }) => {
     })
     const history = useHistory()
 
+    //take individual form input values and append them to the formData object to be sent through a post fetch later
     const handleOnChange = (e) => {
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
@@ -60,7 +61,10 @@ const EventForm = ({ onAddEvent }) => {
                 if (res.ok) {
                     res.json().then(data => {
                         onAddEvent(data)
-                        history.push(`/events/${data.id}`)
+                        setFormData({name: '',
+                        info: '',
+                        park_id: '',
+                        user_id: '',})
                     })
                 } else {
                     res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} : ${e[1]}`)))
@@ -75,8 +79,7 @@ const EventForm = ({ onAddEvent }) => {
 
     return (
         <section>
-            {errors ? errors.map(e => <div>{e}</div>) : null}
-            <form className="form" autoComplete="off" onSubmit={handleSubmit}>
+            <Form className="form" autoComplete="off" onSubmit={handleSubmit}>
                 <h3>Add New Event</h3>
 
                 <div class="row">
@@ -148,8 +151,8 @@ const EventForm = ({ onAddEvent }) => {
                         <button type="submit">Add Event</button>
                     </div>
                 </div>
-            </form>
-            {errors ? errors.map(e => <h2 style={{ color: 'red' }}>{e.toUpperCase()}</h2>) : null}
+            </Form>
+            {errors ? errors.map(e => <div class="m-5"><h2 style={{ color: 'red'}}>{e.toUpperCase()}</h2></div>) : null}
         </section>
     );
 };

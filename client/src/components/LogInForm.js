@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import Container from "react-bootstrap/Container";
+import Form from 'react-bootstrap/Form';
+
 
 
 const LogInForm = ({ updateUser }) => {
@@ -44,9 +47,9 @@ const LogInForm = ({ updateUser }) => {
         setFormData({ ...formData, [name]: value })
     }
     return (
-        <>
+        <Container class="m-5">
 
-            <form onSubmit={onSubmit}>
+            <Form class="m-5" onSubmit={onSubmit}>
                 {/* <label>
                     Username
                 </label>
@@ -56,19 +59,18 @@ const LogInForm = ({ updateUser }) => {
                     Password
                 </label>
                 <input type='password' name='password' value={password} onChange={handleChange} /> */}
+                <label class="m-3" for="name">UserName</label>
+                <input type="text" class="form-control m-3" name="name" placeholder="userName" value={name} onChange={handleChange} />
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="name" placeholder="userName" value={name} onChange={handleChange}/>
-                        <label for="name">UserName</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" name="password" placeholder="Password"  value={password} onChange={handleChange}/>
-                        <label for="floatingPassword">Password</label>
-                </div>
-                <input type='submit' value='Log in!' />
-            </form>
+
+                <label class="m-3" for="floatingPassword">Password</label>
+                <input type="password" class="form-control m-3" name="password" placeholder="Password" value={password} onChange={handleChange} />
+
+
+                <input class="form-control m-3" type='submit' value='Log in!' />
+            </Form>
             {errors ? <div>{errors}</div> : null}
-        </>
+        </Container>
     )
 }
 

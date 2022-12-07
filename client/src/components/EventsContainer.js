@@ -9,6 +9,7 @@ import EventForm from "./EventForm";
 const EventsContainer = () => {
     const [events, setEvents] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
+    const [showMore, setShowMore] = useState(false)
 
 
 
@@ -30,6 +31,12 @@ const EventsContainer = () => {
     }
 
 
+    const handleShowMore = (e) => {
+        e.preventDefault()
+        setShowMore(!showMore)
+        console.log(showMore)
+    }
+
     useEffect(() => {
         fetch("/events")
             .then((res) => res.json())
@@ -44,12 +51,14 @@ const EventsContainer = () => {
             />
             <Switch>
                 <Route>
+                    
                     <EventList exact path="/events"
                         events={events}
                         onDeleteEvent={onDeleteEvent}
                         onUpdateEvent={onUpdateEvent}
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
+                        handleShowMore={handleShowMore}
                     />
                 </Route>
 

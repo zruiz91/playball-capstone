@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import Container from "react-bootstrap/Container";
+import Form from 'react-bootstrap/Form';
 
 
 const SignUpForm = ({updateUser}) => {
@@ -46,12 +48,12 @@ const SignUpForm = ({updateUser}) => {
         setFormData({ ...formData, [name]: value })
     }
     return (
-        <>
-            <form onSubmit={onSubmit}>
+        <Container class="m-5">
+            <Form onSubmit={onSubmit}>
                 <label>
                     Username
                 </label>
-                <input type='text' name='name' value={name} onChange={handleChange} />
+                <input class="form-control mb-3" type='text' name='name' value={name} onChange={handleChange} />
 
                 {/* <label>
                     Email
@@ -61,13 +63,13 @@ const SignUpForm = ({updateUser}) => {
                 <label>
                     Password
                 </label>
-                <input type='password' name='password' value={password} onChange={handleChange} />
+                <input class="form-control mb-3" type='password' name='password' value={password} onChange={handleChange} />
 
 
-                <input type='submit' value='Sign up!' />
-            </form>
+                <input class="form-control m-3" type='submit' value='Sign up!' />
+            </Form>
             {errors ? errors.map(e => <div>{e[0] + ': ' + e[1]}</div>) : null}
-        </>
+        </Container >
     )
 }
 

@@ -5,7 +5,7 @@ import EventListItem from './EventListItem'
 //temporary front-end DB
 
 
-const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearchQuery }) => {
+const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearchQuery, handleShowMore }) => {
 
 
     const searchResults = events.filter(event => {
@@ -26,18 +26,25 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearc
     const handleSearch = (e) => {
         return setSearchQuery(e.target.value)
     }
+
+
     return (
         <section >
-            <div class="mb-4 mt-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4 ">
+                <div class="mb-5 mt-5">
+                    <h3>Events</h3>
+
+                </div>
                 <input
+                    class="mt-5 mb-5"
                     type="text"
                     placeholder="Search..."
                     onChange={handleSearch}
                 />
+
+
             </div>
-            <div class="mb-4">
-                <h1>All Events</h1>
-            </div>
+
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 {eventListItems}
             </div>
