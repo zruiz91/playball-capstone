@@ -80,7 +80,7 @@ const EventForm = ({ onAddEvent }) => {
     return (
         <section>
             <Form className="form" autoComplete="off" onSubmit={handleSubmit}>
-                <h3>Add New Event</h3>
+                <h3>Add New Pick-Up</h3>
 
                 <div class="row">
                     <div class="col">
@@ -148,7 +148,7 @@ const EventForm = ({ onAddEvent }) => {
 
                 <div class="row mt-4">
                     <div class="col">
-                        <button type="submit">Add Event</button>
+                        <button type="submit">Add Pick-Up</button>
                     </div>
                 </div>
             </Form>

@@ -6,7 +6,7 @@ import EventDetailsPage from "./EventDetailsPage";
 import EventList from "./EventList";
 import EventForm from "./EventForm";
 
-const EventsContainer = () => {
+const EventsContainer = ({currentUser}) => {
     const [events, setEvents] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
     const [showMore, setShowMore] = useState(false)
@@ -46,12 +46,16 @@ const EventsContainer = () => {
 
     return (
         <div>
+            <div class="mb-5 mt-5">
+                    <h3>Pick-Ups</h3>
+
+                </div>
             <EventForm path="/events/new"
                 onAddEvent={onAddEvent}
             />
             <Switch>
                 <Route>
-                    
+
                     <EventList exact path="/events"
                         events={events}
                         onDeleteEvent={onDeleteEvent}
@@ -59,6 +63,7 @@ const EventsContainer = () => {
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
                         handleShowMore={handleShowMore}
+                        currentUser={currentUser}
                     />
                 </Route>
 

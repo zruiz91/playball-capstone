@@ -28,6 +28,7 @@ function App() {
       if(res.ok){
         res.json().then(user => {
           updateUser(user)
+          console.log(currentUser)
         })
       }
     })
@@ -47,6 +48,10 @@ function App() {
         /> */}
         {!currentUser ?
         <Switch>
+          {/* <Route exact path='/'>
+              <Home />
+            </Route> */}
+
           <Route path='/login' >
               <LogInForm updateUser={updateUser}/>
             </Route>
@@ -70,7 +75,7 @@ function App() {
             </Route>
 
             <Route path='/events'>
-              <EventsContainer />
+              <EventsContainer currentUser={currentUser}/>
             </Route>
 
 

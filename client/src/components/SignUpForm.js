@@ -33,8 +33,7 @@ const SignUpForm = ({updateUser}) => {
             .then(res => {
                 if (res.ok) {
                     res.json().then(user => {
-                        updateUser(user)
-                        history.push(`/users/${user.id}`)
+                        history.push(`/login`)
                     })
                 } else {
                     res.json().then(json => setErrors(Object.entries(json.errors)))
@@ -50,10 +49,10 @@ const SignUpForm = ({updateUser}) => {
     return (
         <Container class="m-5">
             <Form onSubmit={onSubmit}>
-                <label>
+                <label class="m-2 p-2">
                     Username
                 </label>
-                <input class="form-control mb-3" type='text' name='name' value={name} onChange={handleChange} />
+                <input class="form-control mb-3 p-2" type='text' name='name' value={name} onChange={handleChange} />
 
                 {/* <label>
                     Email
@@ -63,10 +62,10 @@ const SignUpForm = ({updateUser}) => {
                 <label>
                     Password
                 </label>
-                <input class="form-control mb-3" type='password' name='password' value={password} onChange={handleChange} />
+                <input class="form-control mb-3 p-2" type='password' name='password' value={password} onChange={handleChange} />
 
 
-                <input class="form-control m-3" type='submit' value='Sign up!' />
+                <input class="form-control m-3 p-2" type='submit' value='Sign up!' />
             </Form>
             {errors ? errors.map(e => <div>{e[0] + ': ' + e[1]}</div>) : null}
         </Container >

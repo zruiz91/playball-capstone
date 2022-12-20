@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
-const EventListItem = ({ event, onDeleteEvent, onUpdateEvent }) => {
+const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => {
     const [rsvp, setRsvp] = useState(event.rsvp)
     const [errors, setErrors] = useState([])
 
@@ -58,7 +58,7 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent }) => {
                     <Link to={`/events/${event.id}}`}> <h5 class="card-title"> {event.name}</h5></Link>
                     <h6 class="card-subtitle mb-2 text-muted">Location: {event.park.name}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">Oranizer: {event.user.name}</h6>
-                    <label class="card-subtitle mb-2 text-muted" htmlFor="rsvp">Attending: {rsvp}</label>
+                    <label class="card-subtitle mb-2 p-2 text-muted" htmlFor="rsvp">Attending: {rsvp}</label>
                     <button
                         id="rsvp"
                         name="rsvp"
@@ -71,9 +71,11 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent }) => {
                 </section>
                 <footer>
                     {/* <Link to={`/events/${id}/edit`}> <h6 class="card-link">Edit Event</h6></Link> */}
-                    <button class="btn btn-danger" onClick={handleDeleteClick}>
-                        Get that shit outta here {event.user.name}
+                    {currentUser.name !== event.user.name?null:
+                        <button class="btn btn-danger m-2 p-2" onClick={handleDeleteClick}>
+                        Not on this list {event.user.name}
                     </button>
+                    }
 
                 </footer>
             </div>

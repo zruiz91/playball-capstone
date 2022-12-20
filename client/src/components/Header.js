@@ -43,9 +43,9 @@ const Header = ({ currentUser, setCurrentUser }) => {
         //         </div>
         //     }
         // </NavBar>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning text-muted border ronded">
             <div class="container-fluid">
-                <Link class="navbar-brand">PlayBall</Link>
+                <div class="navbar-brand color-success">PlayBall</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -79,7 +79,7 @@ const Header = ({ currentUser, setCurrentUser }) => {
                                 <Link to='/parks' class="nav-link">Parks</Link>
                             </li>
                             <li class="nav-item">
-                                <Link to='/events' class="nav-link">Events</Link>
+                                <Link to='/events' class="nav-link">Pick-Ups</Link>
                             </li>
                         </ul>
                     }
