@@ -15,9 +15,9 @@ const ParkListItem = ({ park }) => {
     return (
         <div>
             <div class="col">
-                <Card class="text-center border rounded-right bg-light">
+                <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-light">
                     <Card.Img
-                        class="img-fluid border mt-3"
+                        class="img-fluid border m-3"
                         variant="top"
                         src="https://img.freepik.com/free-photo/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style_1253-1107.jpg?w=1800&t=st=1670294414~exp=1670295014~hmac=bb9f4ade8fafacb292d5daf916da381c18dc7c54dce9c3bea803539e8116a22c"
                         width="200"

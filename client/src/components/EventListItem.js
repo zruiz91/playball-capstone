@@ -53,7 +53,7 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
 
     return (
         <div class="col">
-            <div class="card text-center border" >
+            <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-light">
                 <section class="card-body">
                     <Link to={`/events/${event.id}}`}> <h5 class="card-title"> {event.name}</h5></Link>
                     <h6 class="card-subtitle mb-2 text-muted">Location: {event.park.name}</h6>
@@ -78,7 +78,7 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
                     }
 
                 </footer>
-            </div>
+            </Card>
         </div>
 
     )
