@@ -54,8 +54,8 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
     return (
         <div class="col">
             <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-light">
-                <section class="card-body">
-                    <Link to={`/events/${event.id}}`}> <h5 class="card-title"> {event.name}</h5></Link>
+                <Card.Body class="card-body">
+                <Card.Title> <Link to={`/events/${event.id}}`} class="card-title"> {event.name}</Link></Card.Title>
                     <h6 class="card-subtitle mb-2 text-muted">Location: {event.park.name}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">Oranizer: {event.user.name}</h6>
                     <label class="card-subtitle mb-2 p-2 text-muted" htmlFor="rsvp">Attending: {rsvp}</label>
@@ -68,7 +68,7 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
                     </button>
                     <p class="card-text mb-2 text-muted">Details: {event.info}</p>
 
-                </section>
+                </Card.Body>
                 <footer>
                     {/* <Link to={`/events/${id}/edit`}> <h6 class="card-link">Edit Event</h6></Link> */}
                     {currentUser.name !== event.user.name?null:

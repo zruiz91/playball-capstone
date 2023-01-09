@@ -67,11 +67,11 @@ const EventsContainer = ({currentUser}) => {
                     />
                 </Route>
 
-                {/* <Route path="/events/:id">
+                <Route exact path="/events/:id">
                     <EventDetailsPage onDeleteEvent={onDeleteEvent} />
                 </Route>
 
-                <Route path="/events/:id/edit">
+                {/* <Route path="/events/:id/edit">
                     <EditEventForm onUpdateEvent={onUpdateEvent} />
                 </Route> */}
             </Switch>
