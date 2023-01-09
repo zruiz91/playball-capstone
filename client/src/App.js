@@ -37,7 +37,6 @@ function App() {
   return (
     //have browser router set up so header is always present and a ternary that only gives you options to log in or sign up if not logged in otherwise gives access to whole site.
     <BrowserRouter>
-      <Container className=" h-100 container bg">
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         {/* <img id="backgroundImage"
         class="img-fluid border mb-5"
@@ -46,6 +45,7 @@ function App() {
         alt="..."
         src="https://img.freepik.com/free-photo/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style_1253-1107.jpg?w=1800&t=st=1670294414~exp=1670295014~hmac=bb9f4ade8fafacb292d5daf916da381c18dc7c54dce9c3bea803539e8116a22c" 
         /> */}
+        <Container class="m-5">
         {!currentUser ?
         <Switch>
           {/* <Route exact path='/'>

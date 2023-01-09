@@ -3,7 +3,6 @@ import NavBar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 
 
-
 const Header = ({ currentUser, setCurrentUser }) => {
 
 
@@ -43,9 +42,9 @@ const Header = ({ currentUser, setCurrentUser }) => {
         //         </div>
         //     }
         // </NavBar>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning text-muted border rounded ">
+        <nav class="navbar navbar-expand-lg navbar-light top-nav text-muted border rounded fixed-top ">
             <div class="container-fluid">
-                <div class="navbar-brand color-success">PlayBall</div>
+                <div class="navbar-brand top-nav-font">PlayBall</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,19 +66,19 @@ const Header = ({ currentUser, setCurrentUser }) => {
                         {!currentUser ?
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <Link to='/users/new' class="nav-link active">Sign Up</Link>
+                            <Link to='/users/new' class="nav-link active top-nav-font">Sign Up</Link>
                         </li>
                         <li class="nav-item">
-                            <Link to='/login' class="nav-link active">Log In</Link>
+                            <Link to='/login' class="nav-link active top-nav-font">Log In</Link>
                         </li>
                     </ul>
                         :
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <Link to='/parks' class="nav-link">Parks</Link>
+                                <Link to='/parks' class="nav-link top-nav-font">Parks</Link>
                             </li>
                             <li class="nav-item">
-                                <Link to='/events' class="nav-link">Pick-Ups</Link>
+                                <Link to='/events' class="nav-link top-nav-font">Pick-Ups</Link>
                             </li>
                         </ul>
                     }
@@ -100,8 +99,8 @@ const Header = ({ currentUser, setCurrentUser }) => {
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li> */}
                     {/* </ul> */}
-                    {currentUser?<button class="btn btn-outline-success m-1"><Link to='/users/:id' >{currentUser.name}</Link></button>:null}
-                    {currentUser?<button class="btn btn-outline-danger m-1" onClick={handleLogOut}>Log Out</button>:null}
+                    {currentUser?<Link to='/users/:id' class="text-decoration-none top-nav-font nav-link active m-1" >{currentUser.name}</Link>:null}
+                    {currentUser?<button class="btn top-nav-font border m-1" onClick={handleLogOut}>Log Out</button>:null}
                 </div>
             </div>
         </nav>
