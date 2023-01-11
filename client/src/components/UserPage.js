@@ -47,7 +47,7 @@ function UserPage() {
     if (loading) return <h1>hold up one sec</h1>
     if (errors) return <h1>so this is awkward...</h1>
     return (
-        <div>
+        <div class="user-page">
             <Row class="row-cols-md-3">
                 <Col>
                 <img src="avatar.png" alt="Avatar" class="avatar"></img>

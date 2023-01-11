@@ -45,8 +45,8 @@ const EventsContainer = ({currentUser}) => {
     }, [])
 
     return (
-        <div>
-            <div class="mb-5 mt-5">
+        <div class="page">
+            <div >
                     <h3>Pick-Ups</h3>
 
                 </div>

@@ -23,7 +23,7 @@ const ParksContainer = () => {
 
     return (
 
-        <Container>
+        <Container class="page">
         <Switch>
             <Route>
                 <ParkList
