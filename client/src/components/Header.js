@@ -42,7 +42,7 @@ const Header = ({ currentUser, setCurrentUser }) => {
         //         </div>
         //     }
         // </NavBar>
-        <nav class="navbar navbar-expand-lg navbar-light top-nav text-muted border rounded fixed-top ">
+        <nav class="navbar navbar-expand-lg navbar-light top-nav text-muted border rounded fixed ">
             <div class="container-fluid">
                 <div class="navbar-brand top-nav-font">PlayBall</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

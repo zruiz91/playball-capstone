@@ -47,9 +47,9 @@ const LogInForm = ({ updateUser }) => {
         setFormData({ ...formData, [name]: value })
     }
     return (
-        <Container class="m-5">
+        <Container class="page">
 
-            <Form class="m-5" onSubmit={onSubmit}>
+            <Form class="mt-5 " onSubmit={onSubmit}>
                 {/* <label>
                     Username
                 </label>
@@ -59,12 +59,16 @@ const LogInForm = ({ updateUser }) => {
                     Password
                 </label>
                 <input type='password' name='password' value={password} onChange={handleChange} /> */}
+                <div class="form-group">
                 <label class="m-3" for="name">UserName</label>
-                <input type="text" class="form-control m-3" name="name" placeholder="userName" value={name} onChange={handleChange} />
+                <input type="text" class="form-control m-3 " name="name" placeholder="userName" value={name} onChange={handleChange} />
+                </div>
 
-
+                <div class="form-group">
                 <label class="m-3" for="floatingPassword">Password</label>
                 <input type="password" class="form-control m-3" name="password" placeholder="Password" value={password} onChange={handleChange} />
+                </div>
+
 
 
                 <input class="form-control m-3" type='submit' value='Log in!' />

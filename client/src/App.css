@@ -1,42 +1,29 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
-  color: whitesmoke;
+:root {
+  --main-bg-color: rgb(255, 248, 231);
+  --main-font-color: rgb(0, 0, 0);
+  --theme-primary: rgb(254, 202, 27);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Prompt", sans-serif;
+  background-color: var(--main-bg-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Sriracha", cursive;
+  margin-bottom: 0.75em;
 }
 
 header {
@@ -50,13 +37,7 @@ ul {
   list-style: none;
 }
 
-#backgroundImage {
-  z-index: -1;
-  height: 100%;
-  border: 1px dashed #996;
-  background-color: #ffc;
-  margin: 0px 50px 0px 50px;
-}
+
 .avatar {
   vertical-align: middle;
   width: 50px;
@@ -79,4 +60,8 @@ ul {
 
 .user-page {
   margin-top: 100px;
+}
+
+.user-form {
+  border: black solid;
 }

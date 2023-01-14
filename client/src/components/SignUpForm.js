@@ -47,28 +47,34 @@ const SignUpForm = ({updateUser}) => {
         setFormData({ ...formData, [name]: value })
     }
     return (
-        <Container class="m-5">
-            <Form onSubmit={onSubmit}>
-                <label class="m-2 p-2">
+        <Container class="page">
+
+            <Form class="mt-5 " onSubmit={onSubmit}>
+                {/* <label>
                     Username
                 </label>
-                <input class="form-control mb-3 p-2" type='text' name='name' value={name} onChange={handleChange} />
-
-                {/* <label>
-                    Email
-                </label>
-                <input type='text' name='email' value={email} onChange={handleChange} /> */}
+                <input type='text' name='name' value={name} onChange={handleChange} />
 
                 <label>
                     Password
                 </label>
-                <input class="form-control mb-3 p-2" type='password' name='password' value={password} onChange={handleChange} />
+                <input type='password' name='password' value={password} onChange={handleChange} /> */}
+                <div class="form-group">
+                <label class="m-3" for="name">UserName</label>
+                <input type="text" class="form-control m-3 " name="name" placeholder="userName" value={name} onChange={handleChange} />
+                </div>
+
+                <div class="form-group">
+                <label class="m-3" for="floatingPassword">Password</label>
+                <input type="password" class="form-control m-3" name="password" placeholder="Password" value={password} onChange={handleChange} />
+                </div>
 
 
-                <input class="form-control m-3 p-2" type='submit' value='Sign up!' />
+
+                <input class="form-control m-3" type='submit' value='Sign up!' />
             </Form>
-            {errors ? errors.map(e => <div>{e[0] + ': ' + e[1]}</div>) : null}
-        </Container >
+            {errors ? <div>{errors}</div> : null}
+        </Container>
     )
 }
 
