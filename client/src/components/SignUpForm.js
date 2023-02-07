@@ -61,12 +61,12 @@ const SignUpForm = ({updateUser}) => {
                 <input type='password' name='password' value={password} onChange={handleChange} /> */}
                 <div class="form-group">
                 <label class="m-3" for="name">UserName</label>
-                <input type="text" class="form-control m-3 " name="name" placeholder="userName" value={name} onChange={handleChange} />
+                <input type="text" class="form-control m-3 " name="name" placeholder="userName" value={name} onChange={handleChange} required/>
                 </div>
 
                 <div class="form-group">
                 <label class="m-3" for="floatingPassword">Password</label>
-                <input type="password" class="form-control m-3" name="password" placeholder="Password" value={password} onChange={handleChange} />
+                <input type="password" class="form-control m-3" name="password" placeholder="Password" value={password} onChange={handleChange} required/>
                 </div>
 
 

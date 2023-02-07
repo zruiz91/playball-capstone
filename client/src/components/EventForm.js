@@ -92,6 +92,8 @@ const EventForm = ({ onAddEvent }) => {
                             name="name"
                             value={formData.name}
                             onChange={handleOnChange}
+                            minlength="2"
+                            required
                         />
                     </div>
                     <div class="col">
@@ -103,6 +105,8 @@ const EventForm = ({ onAddEvent }) => {
                             name="info"
                             value={formData.info}
                             onChange={handleOnChange}
+                            minlength="3"
+                            required
                         />
                     </div>
                 </div>
@@ -123,7 +127,8 @@ const EventForm = ({ onAddEvent }) => {
                             name="park_id"
                             id="park_id"
                             value={formData.park_id}
-                            onChange={handleParkChange}>
+                            onChange={handleParkChange}
+                            >
                             {/*map over the parks and return option for each with id */}
                             <option selected > -- Select a park -- </option>
                             {parks.map((park) => <option value={park.id}>{park.name}</option>)}
@@ -137,7 +142,8 @@ const EventForm = ({ onAddEvent }) => {
                             name="user_id"
                             id="user_id"
                             value={formData.user_id}
-                            onChange={handleUserChange}>
+                            onChange={handleUserChange}
+                            >
                             {/*map over the parks and return option for each with id */}
                             <option value="⬇️ Select a user⬇️"> -- Select a user -- </option>
                             {users.map((user) => <option value={user.id}>{user.name}</option>)}
