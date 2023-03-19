@@ -64,7 +64,7 @@ const Header = ({ currentUser, setCurrentUser }) => {
                         </li> */}
 
                         {!currentUser ?
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <Link to='/users/new' class="nav-link active top-nav-font">Sign Up</Link>
                         </li>
