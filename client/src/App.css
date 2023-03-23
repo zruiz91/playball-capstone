@@ -13,7 +13,7 @@ body {
 }
 
 body {
-  font-family: "Prompt", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--main-bg-color);
 }
 
@@ -22,7 +22,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Sriracha", cursive;
+  font-family: 'Ubuntu', sans-serif;
   margin-bottom: 0.75em;
 }
 
