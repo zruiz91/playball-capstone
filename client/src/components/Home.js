@@ -16,7 +16,7 @@ const Home = () => {
 
 
                     {/* <!-- Nav Bar --> */}
-                    <nav class="navbar navbar-expand-lg navbar-dark">
+                    {/* <nav class="navbar navbar-expand-lg navbar-dark">
 
                         <a class="navbar-brand" href="">tindog</a>
 
@@ -40,7 +40,7 @@ const Home = () => {
                             </ul>
 
                         </div>
-                    </nav>
+                    </nav> */}
 
 
 
@@ -48,11 +48,9 @@ const Home = () => {
                     <div class="row">
 
                         <div class="col-lg-6">
-                            <h1 class="big-heading">Meet new and interesting dogs nearby.</h1>
-                            <button type="button" class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-apple"></i>
-                                Download</button>
-                            <button type="button" class="btn btn-outline-light btn-lg download-button"><i
-                                class="fa-brands fa-android"></i> Download</button>
+                            <h1 class="big-heading">Find the Park thats right for you.</h1>
+                            <button type="button" class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-apple"></i> Download</button>
+                            <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fa-brands fa-android"></i> Download</button>
                         </div>
 
                         <div class="col-lg-6">
@@ -101,13 +99,13 @@ const Home = () => {
                             <h2 class="testimonial-text">I no longer have to sniff other dogs for love. I've found the hottest Corgi on
                                 TinDog. Woof.</h2>
                             {/* <img class="testimonial-img" src="images/dog-img.jpg" alt="dog-profile"> */}
-                                <em>Pebbles, New York</em>
+                            <em>Pebbles, New York</em>
                         </div>
                         <div class="carousel-item container-fluid">
                             <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of
                                 their life. I think.</h2>
                             {/* <img class="testimonial-img" src="images/lady-img.jpg" alt="lady-profile"> */}
-                                <em>Beverly, Illinois</em>
+                            <em>Beverly, Illinois</em>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
