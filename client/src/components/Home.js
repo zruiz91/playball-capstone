@@ -18,7 +18,7 @@ const Home = () => {
                     {/* <!-- Nav Bar --> */}
                     {/* <nav class="navbar navbar-expand-lg navbar-dark">
 
-                        <a class="navbar-brand" href="">tindog</a>
+                        <a class="navbar-brand" href="">PlayBall</a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,17 +72,17 @@ const Home = () => {
                         <div class="feature-box col-lg-4 col-md-12">
                             <i class="feature-icon fa-sharp fa-solid fa-circle-check fa-4x"></i>
                             <h3 class="feature-title">Easy to use.</h3>
-                            <p>So easy to use, even your dog could do it.</p>
+                            <p>So easy to use, even your park could do it.</p>
                         </div>
                         <div class="feature-box col-lg-4 col-md-12">
                             <i class="feature-icon fa-solid fa-bullseye fa-4x"></i>
                             <h3 class="feature-title">Elite Clientele</h3>
-                            <p>We have all the dogs, the greatest dogs.</p>
+                            <p>We have all the parks, the greatest parks.</p>
                         </div>
                         <div class="feature-box col-lg-4 col-md-12">
                             <i class="feature-icon fa-solid fa-heart fa-4x"></i>
                             <h3 class="feature-title">Guaranteed to work.</h3>
-                            <p>Find the love of your dog's life or your money back.</p>
+                            <p>Find the love of your park's life or your money back.</p>
                         </div>
                     </div>
                 </div>
@@ -96,13 +96,13 @@ const Home = () => {
                 <div id="carouselExample" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-inner">
                         <div class="carousel-item container-fluid active">
-                            <h2 class="testimonial-text">I no longer have to sniff other dogs for love. I've found the hottest Corgi on
-                                TinDog. Woof.</h2>
-                            {/* <img class="testimonial-img" src="images/dog-img.jpg" alt="dog-profile"> */}
+                            <h2 class="testimonial-text">I no longer have to search other parks for events. I've found the hottest event on
+                                PlayBall. Woof.</h2>
+                            {/* <img class="testimonial-img" src="images/park-img.jpg" alt="park-profile"> */}
                             <em>Pebbles, New York</em>
                         </div>
                         <div class="carousel-item container-fluid">
-                            <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of
+                            <h2 class="testimonial-text">My park used to be so lonely, but with PlayBall's help, they've found the love of
                                 their life. I think.</h2>
                             {/* <img class="testimonial-img" src="images/lady-img.jpg" alt="lady-profile"> */}
                             <em>Beverly, Illinois</em>
@@ -159,15 +159,15 @@ const Home = () => {
             <section id="pricing">
                 {/* <!-- <div class="container-fluid"> --> */}
 
-                <h2 class="section-heading">A Plan for Every Dog's Needs</h2>
-                <p>Simple and affordable price plans for your and your dog.</p>
+                <h2 class="section-heading">A Plan for Every park's Needs</h2>
+                <p>Simple and affordable price plans for your and your park.</p>
 
                 <div class="row">
 
                     <div class="price-tier col-lg-4 col-md-6 col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Chihuahua</h3>
+                                <h3>Basic</h3>
                             </div>
                             <div class="card-body">
                                 <h2 class="pricing-text">Free</h2>
@@ -185,7 +185,7 @@ const Home = () => {
                     <div class="price-tier col-lg-4 col-md-6 col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Labrador</h3>
+                                <h3>Plus</h3>
                             </div>
                             <div class="card-body">
                                 <h2 class="pricing-text">$49 / mo</h2>
@@ -204,7 +204,7 @@ const Home = () => {
                     <div class="price-tier col-lg-4 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Mastiff</h3>
+                                <h3>Premium</h3>
                             </div>
                             <div class="card-body">
                                 <h2 class="pricing-text">$99 / mo</h2>
@@ -230,7 +230,7 @@ const Home = () => {
 
             <section id="cta">
                 <div class="container-fluid">
-                    <h3 class="big-heading">Find the True Love of Your Dog's Life Today.</h3>
+                    <h3 class="big-heading">Find the Park thats right for you.</h3>
                     <button type="button" class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-apple"></i>
                         Download</button>
                     <button type="button" class="btn btn-light btn-lg download-button"><i class="fa-brands fa-google-play"></i>
@@ -244,11 +244,11 @@ const Home = () => {
 
             <footer id="footer">
                 <div class="container-fluid">
-                    {/* <i class="social-icon fa-brands fa-facebook-f"></i>
+                    <i class="social-icon fa-brands fa-facebook-f"></i>
                     <i class="social-icon fa-brands fa-twitter"></i>
                     <i class="social-icon fa-brands fa-instagram"></i>
-                    <i class="social-icon fa-regular fa-envelope"></i> */}
-                    <p>© Copyright TinDog</p>
+                    <i class="social-icon fa-regular fa-envelope"></i>
+                    <p>© Copyright PlayBall</p>
                 </div>
 
             </footer>
