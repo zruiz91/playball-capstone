@@ -195,6 +195,7 @@ p {
 #testimonials {
   text-align: center;
   background-color: #65C18C;
+  color: #fff;
 }
 
 .testimonial-text {
@@ -241,6 +242,7 @@ p {
 
 #cta {
   background-color: #65C18C;
+  color: #fff;
   text-align: center;
   padding: 7% 15%;
 

@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import EditEventForm from './EditEventForm'
 import EventDetailsPage from "./EventDetailsPage";
 import EventList from "./EventList";
-import EventForm from "./EventForm";
+// import EventForm from "./EventForm";
 
-const EventsContainer = ({currentUser}) => {
+const EventsContainer = ({ currentUser }) => {
     const [events, setEvents] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
     const [showMore, setShowMore] = useState(false)
@@ -45,36 +45,45 @@ const EventsContainer = ({currentUser}) => {
     }, [])
 
     return (
-        <div class="page">
-            <div >
-                    <h3>Pick-Ups</h3>
+        <div class="">
+            {/* <div >
+                <h3>Pick-Ups</h3>
 
-                </div>
-            <EventForm path="/events/new"
-                onAddEvent={onAddEvent}
-            />
-            <Switch>
-                <Route>
+            </div> */}
+            {/* <div>
+                <EventForm path="/events/new"
+                    onAddEvent={onAddEvent}
+                />
+            </div> */}
 
-                    <EventList exact path="/events"
-                        events={events}
-                        onDeleteEvent={onDeleteEvent}
-                        onUpdateEvent={onUpdateEvent}
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        handleShowMore={handleShowMore}
-                        currentUser={currentUser}
-                    />
-                </Route>
 
-                {/* <Route exact path="/events/:id">
+            <div>
+                <Switch>
+                    <Route>
+
+                        <EventList exact path="/events"
+                            events={events}
+                            onDeleteEvent={onDeleteEvent}
+                            onUpdateEvent={onUpdateEvent}
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            handleShowMore={handleShowMore}
+                            currentUser={currentUser}
+                            onAddEvent={onAddEvent}
+                        />
+                    </Route>
+                </Switch>
+
+            </div>
+
+            {/* <Route exact path="/events/:id">
                     <EventDetailsPage onDeleteEvent={onDeleteEvent} />
                 </Route> */}
 
-                {/* <Route path="/events/:id/edit">
+            {/* <Route path="/events/:id/edit">
                     <EditEventForm onUpdateEvent={onUpdateEvent} />
                 </Route> */}
-            </Switch>
+
         </div>
     )
 }

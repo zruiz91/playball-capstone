@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useParams } from "react-router-dom";
+import EventForm from "./EventForm";
 
 import EventListItem from './EventListItem'
 //temporary front-end DB
 
 
-const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearchQuery, handleShowMore, currentUser }) => {
+const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearchQuery, handleShowMore, currentUser, onAddEvent }) => {
 
 
     const searchResults = events.filter(event => {
@@ -31,20 +32,40 @@ const EventList = ({ events, onUpdateEvent, onDeleteEvent, searchQuery, setSearc
 
     return (
         <section >
-            <div class="row row-cols-1 row-cols-md-2 g-4 ">
-                <input
-                    class="mt-5 mb-5"
-                    type="text"
-                    placeholder="Search..."
-                    onChange={handleSearch}
-                />
+            <div>
+                <div class="container-fluid">
+
+                    <div class="">
+                        <h3>Pick-Ups</h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 ">
+                        <input
+                            class="mt-5 mb-5"
+                            type="text"
+                            placeholder="Search..."
+                            onChange={handleSearch}
+                        />
+
+
+                    </div>
+
+                    <div>
+                        <EventForm path="/events/new"
+                            onAddEvent={onAddEvent}
+                        />
+                    </div>
+                </div>
+
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {eventListItems}
+                </div>
 
 
             </div>
 
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                {eventListItems}
-            </div>
+
+
 
         </section>
     )

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import Container from "react-bootstrap/Container";
 import ParkListItem from './ParkListItem'
 //temporary front-end DB
@@ -20,13 +20,13 @@ const ParkList = ({ parks, onSelectedAmenityChange, searchQuery, setSearchQuery 
     }
     return (
         <div>
-            <div class="row row-cols-1 row-cols-md-2 g-4 ">
-                <div class="mb-5 mt-5">
+            <div class="container-fluid">
+                <div class="">
                     <h3>Parks</h3>
 
                 </div>
 
-                <div class="mb-5 mt-5">
+                <div class="">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleSearch} />
                 </div>
 

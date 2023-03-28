@@ -35,29 +35,37 @@ function UserPage() {
     const userEventsListItems = userEvents.map((event) => {
         return <div>
             <Card class="m-2 p-2">
-            <Card.Body class="card-body">
-                <Card.Title><h3 class=""> {event.name} </h3></Card.Title>
-                <h6 class="card-subtitle mb-2 text-muted">Info: {event.info}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Attending:{event.rsvp}</h6>
-            </Card.Body>
-        </Card>
+                <Card.Body class="card-body">
+                    <Card.Title><h3 class=""> {event.name} </h3></Card.Title>
+                    <h6 class="card-subtitle mb-2 text-muted">Info: {event.info}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Attending:{event.rsvp}</h6>
+                </Card.Body>
+            </Card>
         </div>
     })
 
     if (loading) return <h1>hold up one sec</h1>
     if (errors) return <h1>so this is awkward...</h1>
     return (
-        <div class="user-page">
-            <Row class="row-cols-md-3">
-                <Col>
-                <img src="avatar.png" alt="Avatar" class="avatar"></img>
-                <h1>{user.name}</h1>
-                </Col>
-            </Row>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                {/* <li>{user.events[0]}</li> */}
-                {userEventsListItems}
-            </div>
+        <div>
+            {/* User Info Section*/}
+            <section>
+                <div class="container-fluid">
+                    <Row class="row-cols-md-3">
+                        <Col>
+                            <img src="avatar.png" alt="Avatar" class="avatar"></img>
+                            <h1>{user.name}</h1>
+                        </Col>
+                    </Row>
+                </div>
+            </section>
+            {/* User Event Section*/}
+            <section>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {/* <li>{user.events[0]}</li> */}
+                    {userEventsListItems}
+                </div>
+            </section>
         </div>
     )
 }
