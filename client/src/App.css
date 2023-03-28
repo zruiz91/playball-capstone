@@ -111,7 +111,7 @@ p {
 }
 
 .bg-color {
-  background-color: #76BA99;
+  background-color: #65C18C;
   color: #fff;
 }
 
@@ -177,12 +177,12 @@ p {
 
 .feature-icon {
   margin-bottom: 1rem;
-  color: #61764B;
+  color: #C1F4C5;
 
 }
 
 .feature-icon:hover {
-  color: #ADCF9F;
+  color: #65C18C;
 
 }
 
@@ -194,7 +194,7 @@ p {
 
 #testimonials {
   text-align: center;
-  background-color: #76BA99;
+  background-color: #65C18C;
 }
 
 .testimonial-text {
@@ -214,7 +214,6 @@ p {
 }
 
 #press {
-  background-color: #76BA99;
   text-align: center;
   padding-bottom: 3%;
 }
@@ -241,6 +240,7 @@ p {
 /* Call To Action */
 
 #cta {
+  background-color: #65C18C;
   text-align: center;
   padding: 7% 15%;
 

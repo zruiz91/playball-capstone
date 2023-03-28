@@ -12,7 +12,7 @@ const Home = () => {
             <section id="title">
 
 
-                <div class="container-fluid">
+                <div class="container-fluid bg-color">
 
 
                     {/* <!-- Nav Bar --> */}
@@ -54,7 +54,7 @@ const Home = () => {
                         </div>
 
                         <div class="col-lg-6">
-                            {/* <img src="images/iphone6.png" alt="iphone-mockup" class="title-image"> */}
+
                         </div>
 
                     </div>
