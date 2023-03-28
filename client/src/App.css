@@ -104,10 +104,16 @@ p {
   line-height: 1.5;
 }
 
+.brand-text {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* Container Section */
 
 .container-fluid {
   padding: 7% 15%;
+  margin: 0 auto;
 }
 
 .bg-color {
