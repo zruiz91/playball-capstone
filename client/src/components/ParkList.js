@@ -20,13 +20,13 @@ const ParkList = ({ parks, onSelectedAmenityChange, searchQuery, setSearchQuery 
     }
     return (
         <div>
-            <div class="container-fluid">
-                <div class="">
+            <div class="">
+                <div class="mb-5 mt-5">
                     <h3>Parks</h3>
 
                 </div>
 
-                <div class="">
+                <div class="mb-5 mt-5">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleSearch} />
                 </div>
 

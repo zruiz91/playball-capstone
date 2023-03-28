@@ -15,7 +15,7 @@ const ParkListItem = ({ park }) => {
     return (
         <div>
             <div class="col">
-                <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-light">
+                <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-color">
                     <Card.Img
                         class="img-fluid border m-3"
                         variant="top"
@@ -27,7 +27,7 @@ const ParkListItem = ({ park }) => {
                         <Card.Title class="mt-2 mb-2"><h3>{name}</h3></Card.Title>
                         <h5 class="card-subtitle mt-2 mb-2 text-muted">{address}</h5>
                         <h5 class="card-subtitle mt-2 mb-2 text-muted">Amenities</h5>
-                        <ul class="list-group list-group-flush">
+                        <ul class="list-group list-group-flush amenity-items">
                             {amenityListItems}
                         </ul>
                     </Card.Body>

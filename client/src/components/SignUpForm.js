@@ -87,7 +87,7 @@ const SignUpForm = ({ updateUser }) => {
                     </Form>
                     {errors ? <div>{errors}</div> : null}
                 </div>
-                
+
             </div>
             <Home />
         </section>

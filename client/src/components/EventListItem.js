@@ -53,9 +53,9 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
 
     return (
         <div class="col">
-            <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-light">
+            <Card className="text-center border border-start-0 border-top-0 border-4 rounded-right bg-color">
                 <Card.Body class="card-body">
-                <Card.Title> <Link to={`/events/${event.id}`} class="card-title"> {event.name}</Link></Card.Title>
+                <Card.Title> <Link to={`/events/${event.id}`} class="card-title event-name"> {event.name}</Link></Card.Title>
                     <h6 class="card-subtitle mb-2 text-muted">Location: {event.park.name}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">Oranizer: {event.user.name}</h6>
                     <label class="card-subtitle mb-2 p-2 text-muted" htmlFor="rsvp">Attending: {rsvp}</label>

@@ -23,7 +23,7 @@ const ParksContainer = () => {
 
     return (
 
-        <Container class="page">
+        <div class="container-fluid">
         <Switch>
             <Route>
                 <ParkList
@@ -41,7 +41,7 @@ const ParksContainer = () => {
                 <ParkDetailsPage />
             </Route>
         </Switch>
-        </Container>
+        </div>
     )
 }
 

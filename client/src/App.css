@@ -109,6 +109,9 @@ p {
   color: #fff;
 }
 
+.brand-text:hover {
+  color: #C1F4C5;
+}
 /* Container Section */
 
 .container-fluid {
@@ -272,4 +275,17 @@ p {
       position: static;
       transform: rotate(0);
   }
+}
+
+/* Park List Item Cards */
+
+.amenity-items {
+  list-style: none;
+}
+
+/* Event List Item Cards */
+
+.event-name {
+  text-decoration: none;
+  color: #fff;
 }
