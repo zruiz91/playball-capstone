@@ -42,14 +42,15 @@ const Header = ({ currentUser, setCurrentUser }) => {
         //         </div>
         //     }
         // </NavBar>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-color ">
-            <div class="container-fluid">
-                <div class="navbar-brand top-nav-font"><Link to='/' class="brand-text">PlayBall</Link></div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    {/* <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="">
+            <div class="navbar navbar-expand-lg navbar-dark bg-color">
+                <div class="container-fluid">
+                    <div class="navbar-brand top-nav-font"><Link to='/' class="brand-text">PlayBall</Link></div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        {/* <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <Link to='/users/new' class="nav-link active">Sign Up</Link>
                         </li>
@@ -64,24 +65,24 @@ const Header = ({ currentUser, setCurrentUser }) => {
                         </li> */}
 
                         {!currentUser ?
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <Link to='/users/new' class="nav-link active top-nav-font">Sign Up</Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link to='/login' class="nav-link active top-nav-font">Log In</Link>
-                        </li>
-                    </ul>
-                        :
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <Link to='/parks' class="nav-link top-nav-font">Parks</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/events' class="nav-link top-nav-font">Pick-Ups</Link>
-                            </li>
-                        </ul>
-                    }
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <Link to='/users/new' class="nav-link active top-nav-font">Sign Up</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/login' class="nav-link active top-nav-font">Log In</Link>
+                                </li>
+                            </ul>
+                            :
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <Link to='/parks' class="nav-link top-nav-font">Parks</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/events' class="nav-link top-nav-font">Pick-Ups</Link>
+                                </li>
+                            </ul>
+                        }
 
 
                         {/* <li class="nav-item dropdown">
@@ -98,12 +99,14 @@ const Header = ({ currentUser, setCurrentUser }) => {
                         {/* <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li> */}
-                    {/* </ul> */}
-                    {currentUser?<Link to='/users/:id' class="text-decoration-none top-nav-font nav-link active m-1" >{currentUser.name}</Link>:null}
-                    {currentUser?<button class="btn top-nav-font border m-1" onClick={handleLogOut}>Log Out</button>:null}
+                        {/* </ul> */}
+                        {currentUser ? <Link to='/users/:id' class="text-decoration-none top-nav-font nav-link active m-1" >{currentUser.name}</Link> : null}
+                        {currentUser ? <button class="btn top-nav-font border m-1" onClick={handleLogOut}>Log Out</button> : null}
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+
     )
 }
 
