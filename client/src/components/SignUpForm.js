@@ -83,7 +83,7 @@ const SignUpForm = ({ updateUser }) => {
 
 
 
-                        <input class="form-control m-3" type='submit' value='Sign up!' />
+                        <input class="form-control m-3 btn btn-primary" type='submit' value='Sign up!' />
                     </Form>
                     {errors ? <div>{errors}</div> : null}
                 </div>
@@ -96,3 +96,4 @@ const SignUpForm = ({ updateUser }) => {
 }
 
 export default SignUpForm;
+

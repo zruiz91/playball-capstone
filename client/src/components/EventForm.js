@@ -154,7 +154,7 @@ const EventForm = ({ onAddEvent }) => {
 
                 <div class="row mt-4">
                     <div class="col">
-                        <button type="submit">Add Pick-Up</button>
+                        <button type="submit" class="btn btn-primary">Add Pick-Up</button>
                     </div>
                 </div>
             </Form>

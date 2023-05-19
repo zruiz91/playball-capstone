@@ -82,7 +82,7 @@ const LogInForm = ({ updateUser }) => {
 
 
 
-                        <input class="form-control m-3" type='submit' value='Log in!' />
+                        <input class="form-control m-3 btn btn-primary" type='submit' value='Log in!' />
                     </Form>
                     {errors ? <div>{errors}</div> : null}
                 </div>
