@@ -67,7 +67,7 @@ const EventListItem = ({ event, onDeleteEvent, onUpdateEvent, currentUser }) => 
                         value={rsvp}>
                             RSVP
                     </button>
-                    <p class="card-text mb-2 text-muted">Details: {event.info}</p>
+                    <p class="card-text mb-2 text-">Details: {event.info}</p>
 
                 </Card.Body>
                 <footer>
