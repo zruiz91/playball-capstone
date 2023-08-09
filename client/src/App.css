@@ -165,6 +165,8 @@ p {
 
 /* Title Image */
 
+
+
 .title-image {
   width: 22%;
   transform: rotate(25deg);
@@ -175,11 +177,11 @@ p {
 /* Features Section */
 
 #features {
-  margin-top: -1.5%;
   padding: 7% 15%;
   position: relative;
   background-color: #65C18C;
   color: #fff;
+  margin: auto -23.5% auto -23.5%;
 }
 
 .feature-box {
@@ -208,6 +210,8 @@ p {
   text-align: center;
   background-color: #fff;
   color: #000;
+  margin: auto -23.5% auto -23.5%;
+  padding: 7% 15%;
 }
 
 .testimonial-text {
@@ -229,6 +233,7 @@ p {
 #press {
   text-align: center;
   padding-bottom: 3%;
+  margin: auto -23.5% auto -23.5%;
 }
 
 .press-logo {
@@ -242,6 +247,7 @@ p {
   padding: 100px;
   text-align: center;
   background-color: #65C18C;
+  margin: auto -23.5% auto -23.5%;
 }
 
 .price-tier {
@@ -271,6 +277,7 @@ p {
   background-color: #65C18C;
   text-align: center;
   padding: 7% 15%;
+  margin: auto -23.5% auto -23.5%;
 
 }
 
