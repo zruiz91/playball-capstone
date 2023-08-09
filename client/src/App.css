@@ -87,7 +87,7 @@ h6 {
 
 
 p {
-  color: #afafaf;
+  color: #fff;
 }
 
 /* Headings */
@@ -175,8 +175,11 @@ p {
 /* Features Section */
 
 #features {
+  margin-top: -1.5%;
   padding: 7% 15%;
   position: relative;
+  background-color: #65C18C;
+  color: #fff;
 }
 
 .feature-box {
@@ -186,12 +189,12 @@ p {
 
 .feature-icon {
   margin-bottom: 1rem;
-  color: #C1F4C5;
+  color: #fff;
 
 }
 
 .feature-icon:hover {
-  color: #65C18C;
+  color: #C1F4C5;
 
 }
 
@@ -203,8 +206,8 @@ p {
 
 #testimonials {
   text-align: center;
-  background-color: #65C18C;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 .testimonial-text {
@@ -238,6 +241,7 @@ p {
 #pricing {
   padding: 100px;
   text-align: center;
+  background-color: #65C18C;
 }
 
 .price-tier {
@@ -247,11 +251,14 @@ p {
 .pricing-text {
   font-size: 3rem;
 }
+.card-body > p {
+  color: #000;
+}
 /* Call To Action */
 
 #cta {
-  background-color: #65C18C;
-  color: #fff;
+
+  color: #000;
   text-align: center;
   padding: 7% 15%;
 
@@ -261,8 +268,10 @@ p {
 /* Footer */
 
 #footer {
+  background-color: #65C18C;
   text-align: center;
   padding: 7% 15%;
+
 }
 
 .social-icon {

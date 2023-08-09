@@ -12,7 +12,7 @@ const Home = () => {
             <section id="title">
 
 
-                <div class="container-fluid bg-color">
+                <div class="container-fluid mt-5 mb-0">
 
 
                     {/* <!-- Nav Bar --> */}
@@ -50,7 +50,7 @@ const Home = () => {
                         <div class="col-lg-6">
                             <h1 class="big-heading">Find the Park thats right for you.</h1>
                             <button type="button" class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-apple"></i> Download</button>
-                            <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fa-brands fa-android"></i> Download</button>
+                            <button type="button" class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-android"></i> Download</button>
                         </div>
 
                         <div class="col-lg-6">
